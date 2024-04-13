@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../layout/layout';
+import Layout from '../layout/Layout';
 
 const Blog = () => {
   return (
@@ -9,4 +9,4 @@ const Blog = () => {
   )
 }
 
-export default Blog
+export default Blog;

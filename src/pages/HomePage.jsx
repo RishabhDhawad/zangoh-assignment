@@ -1,8 +1,9 @@
 import React from "react";
-import Layout from '../layout/layout';
+import Layout from "../layout/Layout";
 import { Link } from "react-router-dom";
 import googlePlayLogo from "../assets/googlePlayLogo.png";
 import appStoreLogo from "../assets/AppStoreLogo.png";
+import Slider from "../components/Slider";
 
 const HomePage = () => {
   return (
@@ -24,14 +25,17 @@ const HomePage = () => {
 
           {/* Buttons Links */}
           <div className=" flex items-center mt-16 gap-2">
-            <Link to="/app-store">
+            <Link>
               <img src={appStoreLogo} alt="" className=" w-[145px]" />
             </Link>
-            <Link to="/google-play">
+            <Link>
               <img src={googlePlayLogo} alt="" className=" w-[180px]" />
             </Link>
           </div>
         </div>
+
+        {/* Slider */}
+        <Slider />
       </div>
     </Layout>
   );

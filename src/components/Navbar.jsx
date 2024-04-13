@@ -1,13 +1,25 @@
 import React, { useState } from "react";
 import logo from "../assets/navLogo.png";
 import { Link, NavLink } from "react-router-dom";
+import ContactModal from "./ContactModal";
 
-const Navbar = () => {    
+const Navbar = () => {
+
+  const [isModalOpen , setIsModalOpen] = useState(false)
+
+  function openModal(){
+    setIsModalOpen(true)
+  }
+
+  function closeModal(){
+    setIsModalOpen(false)
+  }
+    
   return (
     <div className=" flex items-center justify-between w-full bg-transparent px-10 ">
       <div className=" w-[194px] h-[8vh] z-50">
         <Link to={"/"}>
-          <img src={logo} alt="Logo" className="w-full h-full" />
+          <img src={logo} alt="Logo" className=" w-full h-full" />
         </Link>
       </div>
       <ul className=" flex gap-4 items-center z-20">
@@ -22,6 +34,10 @@ const Navbar = () => {
         </NavLink>
           <li onClick={openModal} className="text-[#F7F7F7] font-semibold cursor-pointer">Contact</li>
       </ul>
+
+      {
+        isModalOpen && <ContactModal closeModal={closeModal} />
+      }
     </div>
   );
 };
